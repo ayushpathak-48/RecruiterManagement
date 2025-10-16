@@ -15,10 +15,10 @@
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <form runat="server">
+    <form runat="server" class="fixed inset-0">
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -54,18 +54,44 @@
                 </div>
             </div>
         </nav>
-        <!-- <div class="container body-content">
+        <div class="flex items-start h-full">
+            <aside class="bg-dark h-full w-[300px] py-2 flex flex-col">
+                <%
+                    if (Session["role"].Equals("admin"))
+                    {
+                %>
+                <a class="text-white transition-all hover:bg-zinc-800 <%= Request.Path  == "/Users" ? "bg-zinc-900":""%> border-y border-gray-700 p-2 px-4 w-full text-decoration-none" href="/Users">Users</a>
+                <%
+                    }
+                %>
+
+                <!--
+                    <%
+                    if (Session["role"].Equals("admin"))
+                    {
+%>
+<a class="text-white transition-all hover:bg-zinc-800 <%= Request.Path == "" ? "bg-zinc-900":"" %> border-y border-gray-700 p-2 px-4 w-full text-decoration-none" href="/Reports">Reports</a>
+<%
+                    }
+%>
+                    -->
+
+                <%
+                    if (Session["role"].Equals("admin") || Session["role"].Equals("recruiter"))
+                    {
+                %>
+                <a class="text-white transition-all hover:bg-zinc-800 <%= Request.Path  == "/Skills" ? "bg-zinc-900":""%> border-y border-gray-700 p-2 px-4 w-full text-decoration-none" href="/Skills">Skills</a>
+                <%
+                    }
+                %>
+            </aside>
+            <div class="w-full overflow-y-auto h-full">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
                 <hr />
-                <footer>
-                    <p>&copy; <%: DateTime.Now.Year %> - Recruiter Management Project</p>
-                </footer>
             </div>
-         -->
+        </div>
     </form>
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
-    </asp:PlaceHolder>
+
 </body>
 </html>

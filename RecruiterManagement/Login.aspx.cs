@@ -22,7 +22,6 @@ namespace RecruiterManagement
                 string email = txtEmail.Text;
                 string password = txtPassword.Text;
                 string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
-                Response.Write(hashedPassword);
                 using (MySqlConnection conn = DBConn.GetConnection())
                 {
                     string query = "SELECT users.email,users.password,users.name,roles.role_name FROM users RIGHT JOIN roles ON users.role_id = roles.id WHERE email=@Email";
