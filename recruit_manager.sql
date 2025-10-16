@@ -3,7 +3,6 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 16, 2025 at 09:02 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -55,22 +54,12 @@ CREATE TABLE `job_skills` (
 
 CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
-  `role_name` varchar(50) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `roles`
 --
 
-INSERT INTO `roles` (`id`, `role_name`, `created_at`) VALUES
-(1, 'admin', '2025-10-16 18:38:56'),
-(2, 'recruiter', '2025-10-16 18:38:56'),
-(3, 'hr', '2025-10-16 18:38:56'),
-(4, 'interviewer', '2025-10-16 18:38:56'),
-(5, 'reviewer', '2025-10-16 18:38:56'),
-(6, 'candidate', '2025-10-16 18:38:56'),
-(7, 'viewer', '2025-10-16 18:38:56');
 
 -- --------------------------------------------------------
 
@@ -80,8 +69,6 @@ INSERT INTO `roles` (`id`, `role_name`, `created_at`) VALUES
 
 CREATE TABLE `skills` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -113,14 +100,6 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role_id`, `created_at`) VALUES
-(1, 'Aayush Pathak', 'ayush@gmail.com', '$2a$11$h7/.7d7liiKlEcihpHoUmudVTpLMq3dH9ZZiePkGcuBZMA9uuwKw2', 1, '2025-10-14 19:45:55'),
-(11, 'Viewer updated', 'viewer@gmail.com', '$2a$11$2VwHrnZP8tcohCdQdADB2u6E.h5RzW.R4ZJKRzfE9AnQyub0WYCc2', 7, '2025-10-16 17:16:09'),
-(12, 'Recruiter', 'recruiter@gmail.com', '$2a$11$5m.bqZhMqP6GuGoAL54IK.Ida9vyuPGPyMBehMm1gQ5TH2t2.kfye', 2, '2025-10-16 17:40:04'),
-(13, 'HR', 'hr@gmail.com', '$2a$11$N9FRldza4eeW3XZsOAu2cu9/nvd2SGwjeLtRmbXnAAjRZmdSOAx9e', 3, '2025-10-16 17:40:50'),
-(14, 'Interviewer', 'interviewer@gmail.com', '$2a$11$XHTjzkoOIYfovjLd6um7W..x7GzeJ34IYeZRBbK4mPzPqpPVaAcAW', 4, '2025-10-16 17:43:03'),
-(15, 'Reviewer', 'reviewer@gmail.com', '$2a$11$n76ju8za9bw94MkYgAA43usuXjCd8ZYQM6bK/MuQ6HXST5QgRh7UC', 5, '2025-10-16 17:43:30'),
-(16, 'Candidate', 'candidate@gmail.com', '$2a$11$azWxNfolz3kapysGftsEqekwmIIJYnBHdH68lpPqSP89univbM5t.', 6, '2025-10-16 17:43:47'),
-(17, 'Test', 'test@gmail.com', '$2a$11$rUWRPacJANXvndOmgRoI2eY/AHWdR9E2t/ntlWfHqbdE9vWmcUnzO', 7, '2025-10-16 17:44:16');
 
 --
 -- Indexes for dumped tables
@@ -192,7 +171,6 @@ ALTER TABLE `skills`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
