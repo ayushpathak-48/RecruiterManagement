@@ -13,14 +13,10 @@
                     CssClass="min-w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
                     placeholder="Enter Name" />
             </div>
-           
-            
-            
             <div class="w-full text-center">
                 <asp:Label runat="server" ID="lblError" CssClass="text-red-500 text-center" Text="" />
                 <asp:Label runat="server" ID="lblSuccess" CssClass="text-green-500 text-center" Text="" />
             </div>
-
             <asp:Button runat="server" Text="Add User" ID="btnSubmit" CssClass="min-w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 rounded-lg transition-colors" OnClick="btnSubmit_Click" />
         </div>
     </div>

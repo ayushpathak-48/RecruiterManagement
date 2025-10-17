@@ -54,41 +54,43 @@
                 </div>
             </div>
         </nav>
+
         <div class="flex items-start h-full">
-            <aside class="bg-dark h-full w-[300px] py-2 flex flex-col">
-                <%
-                    if (Session["role"].Equals("admin"))
-                    {
-                %>
-                <a class="text-white transition-all hover:bg-zinc-800 <%= Request.Path  == "/Users" ? "bg-zinc-900":""%> border-y border-gray-700 p-2 px-4 w-full text-decoration-none" href="/Users">Users</a>
-                <%
-                    }
-                %>
-
-                <!--
+            <aside class="bg-dark h-[92vh] w-[300px] py-2 flex flex-col justify-between">
+                <div class="flex flex-col">
                     <%
-                    if (Session["role"].Equals("admin"))
-                    {
-%>
-<a class="text-white transition-all hover:bg-zinc-800 <%= Request.Path == "" ? "bg-zinc-900":"" %> border-y border-gray-700 p-2 px-4 w-full text-decoration-none" href="/Reports">Reports</a>
-<%
-                    }
-%>
-                    -->
-
-                <%
-                    if (Session["role"].Equals("admin") || Session["role"].Equals("recruiter"))
-                    {
-                %>
-                <a class="text-white transition-all hover:bg-zinc-800 <%= Request.Path  == "/Skills" ? "bg-zinc-900":""%> border-y border-gray-700 p-2 px-4 w-full text-decoration-none" href="/Skills">Skills</a>
-                <%
-                    }
-                %>
+                        if (Session["role"].Equals("admin"))
+                        {
+                    %>
+                    <a class="text-white transition-all hover:bg-zinc-800 <%= Request.Path  == "/Users" ? "bg-zinc-900":""%> border-y border-gray-700 p-2 px-4 w-full text-decoration-none" href="/Users">Users</a>
+                    <%
+                        }
+                        if (Session["role"].Equals("admin") || Session["role"].Equals("recruiter"))
+                        {
+                    %>
+                    <a class="text-white transition-all hover:bg-zinc-800 <%= Request.Path  == "/Skills" ? "bg-zinc-900":""%> border-y border-gray-700 p-2 px-4 w-full text-decoration-none" href="/Skills">Skills</a>
+                    <%
+                        }
+                        if (Session["role"].Equals("admin") || Session["role"].Equals("recruiter"))
+                        {
+                    %>
+                    <a class="text-white transition-all hover:bg-zinc-800 <%= Request.Path  == "/Jobs" ? "bg-zinc-900":""%> border-y border-gray-700 p-2 px-4 w-full text-decoration-none" href="/Jobs">Jobs</a>
+                    <%
+                        }
+                    %>
+                </div>
+                <div class="flex items-center justify-center gap-3 w-full bg-zinc-800 transition-all p-2 px-4 w-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white size-4">
+                        <path d="m16 17 5-5-5-5" />
+                        <path d="M21 12H9" />
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                    </svg>
+                    <asp:Button runat="server" class="text-white" ID="btnLogout" OnClick="btnLogout_Click" Text="Logout" />
+                </div>
             </aside>
             <div class="w-full overflow-y-auto h-full">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
-                <hr />
             </div>
         </div>
     </form>
