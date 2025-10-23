@@ -22,8 +22,8 @@ namespace RecruiterManagement.Skills
             {
                 MySqlCommand cmd = new MySqlCommand("DELETE FROM skills where id=@Id", conn);
                 cmd.Parameters.AddWithValue("@Id", id);
-                int userDeleted = cmd.ExecuteNonQuery();
-                if (userDeleted > 0)
+                int isDeleted = cmd.ExecuteNonQuery();
+                if (isDeleted > 0)
                 {
                     Response.Redirect("/Skills?action=delete&success=true");
                 }

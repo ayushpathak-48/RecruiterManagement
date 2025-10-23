@@ -21,8 +21,6 @@
     <form runat="server" class="fixed inset-0">
         <asp:ScriptManager runat="server">
             <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
@@ -75,18 +73,19 @@
                         {
                     %>
                     <a class="text-white transition-all hover:bg-zinc-800 <%= Request.Path  == "/Jobs" ? "bg-zinc-900":""%> border-y border-gray-700 p-2 px-4 w-full text-decoration-none" href="/Jobs">Jobs</a>
+                    <a class="text-white transition-all hover:bg-zinc-800 <%= Request.Path  == "/Candidates" ? "bg-zinc-900":""%> border-y border-gray-700 p-2 px-4 w-full text-decoration-none" href="/Candidates">Candidates</a>
                     <%
                         }
                     %>
                 </div>
-                <div class="flex items-center justify-center gap-3 w-full bg-zinc-800 transition-all p-2 px-4 w-full">
+                <a href="/Logout.aspx" class="flex items-center justify-center gap-3 w-full bg-zinc-800 transition-all p-2 px-4 w-full text-decoration-none">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white size-4">
                         <path d="m16 17 5-5-5-5" />
                         <path d="M21 12H9" />
                         <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
                     </svg>
-                    <asp:Button runat="server" class="text-white" ID="btnLogout" OnClick="btnLogout_Click" Text="Logout" />
-                </div>
+                    <div class="text-white text-decoration-none">Logout</div>
+                </a>
             </aside>
             <div class="w-full overflow-y-auto h-full">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">

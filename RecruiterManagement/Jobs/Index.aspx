@@ -4,8 +4,8 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="flex flex-col gap-3 p-5">
-        <div class="flex items-center justify-between">
-            <div class="font-semibold text-xl">All Jobs</div>
+            <div class="flex items-center justify-between">
+                <div class="font-semibold text-xl">All Jobs</div>
             <a
                 href="/Jobs/Add"
                 class="text-decoration-none bg-gray-700 p-2 px-3 !rounded-sm text-white">Add Job</a>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Users Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="RecruiterManagement.Skills.Index" %>
+﻿<%@ Page Title="Skills Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="RecruiterManagement.Skills.Index" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="flex flex-col gap-3 p-5">

@@ -29,14 +29,14 @@ namespace RecruiterManagement.Jobs
                 else if (action.Equals("delete") && success.Equals("false"))
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "showAlert",
-        "Swal.fire({icon:'error',title:'Failed!',text:'Failed to delete the skill',timer:1500,showConfirmButton:false});", true);
+        "Swal.fire({icon:'error',title:'Failed!',text:'Failed to delete the job',timer:1500,showConfirmButton:false});", true);
 
                 }
 
                 else if (action.Equals("update") && success.Equals("false"))
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "showAlert",
-        "Swal.fire({icon:'error',title:'Failed!',text:'Failed to update the skill',timer:1500,showConfirmButton:false});", true);
+        "Swal.fire({icon:'error',title:'Failed!',text:'Failed to update the job',timer:1500,showConfirmButton:false});", true);
                 }
 
                 else if (action.Equals("update") && success.Equals("true"))
@@ -45,7 +45,7 @@ namespace RecruiterManagement.Jobs
         "Swal.fire({icon:'success',title:'Updated!',text:'Job updated successfully',timer:1500,showConfirmButton:false});", true);
                 }
 
-                else if (action.Equals("addskill") && success.Equals("true"))
+                else if (action.Equals("addjob") && success.Equals("true"))
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "showAlert",
         "Swal.fire({icon:'success',title:'Added!',text:'Job added successfully',timer:1500,showConfirmButton:false});", true);

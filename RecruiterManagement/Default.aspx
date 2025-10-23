@@ -4,6 +4,10 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="p-5">
+        <%
+            if (Session["role"].Equals("admin") && stats.Count > 0)
+            {
+        %>
         <div class="flex items-center justify-between gap-3">
             <div class="bg-gray-200 rounded-md p-3 flex-1">
                 <div>
@@ -30,5 +34,8 @@
                 <div class="text-xl font-bold"><%= stats["total_candidates"] %></div>
             </div>
         </div>
+        <%
+            }
+        %>
     </div>
 </asp:Content>

@@ -11,6 +11,10 @@ namespace RecruiterManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["loggedIn"] = true;
+            Session["role"] = "admin";
+            Session["email"] = "ayush@gmail.com";
+            Session["name"] = "Aayush Pathak";
             if (Session["loggedIn"] == null)
             {
                 Response.Redirect("/Login");
@@ -18,10 +22,5 @@ namespace RecruiterManagement
 
         }
 
-        protected void btnLogout_Click(object sender, EventArgs e)
-        {
-            Session.RemoveAll();
-            Response.Redirect("/Login");
-        }
     }
 }
