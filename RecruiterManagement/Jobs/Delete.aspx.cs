@@ -24,7 +24,6 @@ namespace RecruiterManagement.Jobs
                 deleteJobSkillsCMD.Parameters.AddWithValue("@Id", id);
                 int isSkillsDeleted = deleteJobSkillsCMD.ExecuteNonQuery();
                 if (isSkillsDeleted <= 0) Response.Redirect("/Jobs?action=delete&success=false");
-
                 MySqlCommand cmd = new MySqlCommand("DELETE FROM jobs where id=@Id", conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 int isDeleted = cmd.ExecuteNonQuery();
