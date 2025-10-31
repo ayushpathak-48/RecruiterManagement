@@ -7,7 +7,10 @@
             <div class="font-semibold text-xl">
                 All Candidates
             </div>
-            <a href="/Candidates/Add" class="text-decoration-none bg-gray-700 p-2 px-3 !rounded-sm text-white">Add Candidate</a>
+            <div class="flex items-center gap-2">
+                <a href="/Candidates/BulkUpload" class="text-decoration-none border  border-gray-700 p-2 px-3 !rounded-sm !text-gray-700">Bulk Upload</a>
+                <a href="/Candidates/Add" class="text-decoration-none bg-gray-700 p-2 px-3 !rounded-sm text-white">Add Candidate</a>
+            </div>
         </div>
         <div class="relative overflow-x-auto">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 border">

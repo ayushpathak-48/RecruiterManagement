@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RecruiterManagement.Jobs
+namespace RecruiterManagement.Candidates
 {
 
 
@@ -15,13 +15,13 @@ namespace RecruiterManagement.Jobs
     {
 
         /// <summary>
-        /// lblName control.
+        /// hiddenCandidateId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblName;
+        protected global::System.Web.UI.WebControls.HiddenField hiddenCandidateId;
 
         /// <summary>
         /// txtName control.
@@ -33,184 +33,130 @@ namespace RecruiterManagement.Jobs
         protected global::System.Web.UI.WebControls.TextBox txtName;
 
         /// <summary>
-        /// lblDescription control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescription;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
-        /// txtDescription control.
+        /// txtPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescription;
+        protected global::System.Web.UI.WebControls.TextBox txtPhone;
 
         /// <summary>
-        /// lblJobType control.
+        /// radioGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblJobType;
+        protected global::System.Web.UI.WebControls.RadioButtonList radioGender;
 
         /// <summary>
-        /// radioJobType control.
+        /// dateOfBirth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList radioJobType;
+        protected global::System.Web.UI.WebControls.TextBox dateOfBirth;
 
         /// <summary>
-        /// stipendDiv control.
+        /// txtAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl stipendDiv;
+        protected global::System.Web.UI.WebControls.TextBox txtAddress;
 
         /// <summary>
-        /// Label3 control.
+        /// txtCity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.TextBox txtCity;
 
         /// <summary>
-        /// txtStipend control.
+        /// txtState control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStipend;
+        protected global::System.Web.UI.WebControls.TextBox txtState;
 
         /// <summary>
-        /// salaryFromDiv control.
+        /// txtEducation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl salaryFromDiv;
+        protected global::System.Web.UI.WebControls.TextBox txtEducation;
 
         /// <summary>
-        /// lblSalaryFrom control.
+        /// txtExperienceYears control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSalaryFrom;
+        protected global::System.Web.UI.WebControls.TextBox txtExperienceYears;
 
         /// <summary>
-        /// txtSalaryFrom control.
+        /// txtCurrentPosition control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSalaryFrom;
+        protected global::System.Web.UI.WebControls.TextBox txtCurrentPosition;
 
         /// <summary>
-        /// salaryToDiv control.
+        /// txtExpectedSalary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl salaryToDiv;
+        protected global::System.Web.UI.WebControls.TextBox txtExpectedSalary;
 
         /// <summary>
-        /// lblSalaryTo control.
+        /// displaySkillsDiv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSalaryTo;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl displaySkillsDiv;
 
         /// <summary>
-        /// txtSalaryTo control.
+        /// skillsCheckboxList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSalaryTo;
+        protected global::System.Web.UI.WebControls.CheckBoxList skillsCheckboxList;
 
         /// <summary>
-        /// lblReq control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReq;
-
-        /// <summary>
-        /// displayRequiredSkillsDiv control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayRequiredSkillsDiv;
-
-        /// <summary>
-        /// requiredSkillsCheckboxList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList requiredSkillsCheckboxList;
-
-        /// <summary>
-        /// lblPref control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPref;
-
-        /// <summary>
-        /// displayPreferredSkillsDiv control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayPreferredSkillsDiv;
-
-        /// <summary>
-        /// preferredSkillsCheckboxList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList preferredSkillsCheckboxList;
-
-        /// <summary>
-        /// lblError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
         /// btnUpdate control.

@@ -150,16 +150,61 @@
                 </div>
 
                 <div class="w-full">
-                    <asp:Label ID="Label2" runat="server" CssClass="block text-sm font-medium text-gray-700 mb-1">Name</asp:Label>
+                    <asp:Label ID="lblDescription" runat="server" CssClass="block text-sm font-medium text-gray-700 mb-1">Description</asp:Label>
                     <asp:TextBox
                         TextMode="MultiLine"
-                        ID="TextBox1"
+                        ID="txtDescription"
                         runat="server"
                         CssClass="min-w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
-                        placeholder="Enter Name" />
+                        placeholder="Enter Description" />
                 </div>
-F
 
+                <div class="w-full">
+                    <asp:Label ID="lblJobType" runat="server" CssClass="block text-sm font-medium text-gray-700 mb-1">Job Type</asp:Label>
+                    <asp:RadioButtonList AutoPostBack="true" ID="radioJobType" runat="server">
+                        <asp:ListItem Text="Internship" Value="INTERNSHIP" />
+                        <asp:ListItem Text="Full Time Job" Value="JOB" />
+                        <asp:ListItem Text="Both" Value="BOTH" Selected="True"/>
+                    </asp:RadioButtonList>
+                </div>
+
+                <%
+                    if (!radioJobType.SelectedValue.Equals("JOB"))
+                    {
+                %>
+                <div class="w-full">
+                    <asp:Label ID="Label3" runat="server" CssClass="block text-sm font-medium text-gray-700 mb-1">Stipend</asp:Label>
+                    <asp:TextBox
+                        ID="txtStipend"
+                        runat="server"
+                        CssClass="min-w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
+                        placeholder="Stipend" />
+                </div>
+                <%
+                    }
+                    if(!radioJobType.SelectedValue.Equals("INTERNSHIP"))
+                    {
+                %>
+                <div class="w-full">
+                    <asp:Label ID="lblSalaryRange" runat="server" CssClass="block text-sm font-medium text-gray-700 mb-1">Salary Range From</asp:Label>
+                    <asp:TextBox
+                        ID="txtSalaryFrom"
+                        runat="server"
+                        CssClass="min-w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
+                        placeholder="Enter Salary From" />
+                </div>
+                <div class="w-full">
+                    <asp:Label ID="Label2" runat="server" CssClass="block text-sm font-medium text-gray-700 mb-1">Salary Range To</asp:Label>
+                    <asp:TextBox
+                        ID="txtSalaryTo"
+                        runat="server"
+                        CssClass="min-w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
+                        placeholder="Enter Salary To" />
+                </div>
+                <%
+
+                    }
+                %>
 
                 <div class="w-full">
                     <asp:Label ID="lblSkills" runat="server" CssClass="block text-sm font-medium text-gray-700 mb-1">Required Skills</asp:Label>

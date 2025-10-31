@@ -161,8 +161,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Candidates\Add.aspx" />
+    <Content Include="Candidates\BulkUpload.aspx" />
     <Content Include="Candidates\Delete.aspx" />
     <Content Include="Candidates\Index.aspx" />
+    <Content Include="Candidates\Update.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -268,6 +270,13 @@
     <Compile Include="Candidates\Add.aspx.designer.cs">
       <DependentUpon>Add.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Candidates\BulkUpload.aspx.cs">
+      <DependentUpon>BulkUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidates\BulkUpload.aspx.designer.cs">
+      <DependentUpon>BulkUpload.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Candidates\Delete.aspx.cs">
       <DependentUpon>Delete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -281,6 +290,13 @@
     </Compile>
     <Compile Include="Candidates\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidates\Update.aspx.cs">
+      <DependentUpon>Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidates\Update.aspx.designer.cs">
+      <DependentUpon>Update.aspx</DependentUpon>
     </Compile>
     <Compile Include="DBConn.cs" />
     <Compile Include="Default.aspx.cs">
@@ -421,6 +437,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

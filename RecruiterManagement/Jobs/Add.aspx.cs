@@ -22,12 +22,21 @@ namespace RecruiterManagement.Jobs
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             string name = txtName.Text;
+            string description = txtDescription.Text;
+            string salary_from = txtSalaryFrom.Text;
+            string salary_to = txtSalaryTo.Text;
+            string stipend = txtStipend.Text;
+            string job_type = radioJobType.SelectedValue;
             using (MySqlConnection conn = DBConn.GetConnection())
             {
-                string query = "INSERT INTO jobs (`name`,`description`) VALUES (@Name,@Description)";
+                string query = "INSERT INTO jobs (`name`,`description`,`salary_range_start`,`salary_range_end`,`stipend`,`job_type`) VALUES (@Name,@Description,@SalaryStart,@SalaryEnd,@Stipend,@JobType)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Name", name);
-                cmd.Parameters.AddWithValue("@Description", name);
+                cmd.Parameters.AddWithValue("@Description", description);
+                cmd.Parameters.AddWithValue("@SalaryStart", salary_from);
+                cmd.Parameters.AddWithValue("@SalaryEnd", salary_to);
+                cmd.Parameters.AddWithValue("@Stipend", stipend);
+                cmd.Parameters.AddWithValue("@JobType", job_type);
                 int jobRows = cmd.ExecuteNonQuery();
                 if (jobRows > 0)
                 {

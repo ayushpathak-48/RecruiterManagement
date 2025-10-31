@@ -64,9 +64,9 @@ namespace RecruiterManagement.Jobs
         {
             using (MySqlConnection conn = DBConn.GetConnection())
             {
-                string query = "SELECT j.id,j.name,j.status, " +
-                    "GROUP_CONCAT(CASE when js.type = 'REQUIRED' THEN s.name END ORDER BY s.name SEPARATOR ',') AS required_skills, " +
-                    "GROUP_CONCAT(CASE when js.type = 'PREFERRED' THEN s.name END ORDER BY s.name SEPARATOR ',') AS preferred_skills " +
+                string query = "SELECT j.*, " +
+                    "GROUP_CONCAT(CASE when js.type = 'REQUIRED' THEN s.name END ORDER BY s.name SEPARATOR ', ') AS required_skills, " +
+                    "GROUP_CONCAT(CASE when js.type = 'PREFERRED' THEN s.name END ORDER BY s.name SEPARATOR ', ') AS preferred_skills " +
                     "FROM jobs j " +
                     "LEFT JOIN job_skills js ON j.id = js.job_id " +
                     "LEFT JOIN skills s ON js.skill_id = s.id GROUP BY " +
@@ -77,16 +77,21 @@ namespace RecruiterManagement.Jobs
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Job skill = new Job
+                    Job job = new Job
                     {
                         Id = Convert.ToInt32(reader["id"]),
                         Name = reader["name"].ToString(),
                         Preferred_Skills = reader["preferred_skills"].ToString(),
                         Required_Skills = reader["required_skills"].ToString(),
-                        Status = reader["status"].ToString()
+                        Status = reader["status"].ToString(),
+                        Description = reader["description"].ToString(),
+                        SalaryFrom = reader["salary_range_start"].ToString(),
+                        SalaryTo = reader["salary_range_end"].ToString(),
+                        Stipend = reader["stipend"].ToString(),
+                        Type = reader["job_type"].ToString()
                     };
 
-                    JobsList.Add(skill);
+                    JobsList.Add(job);
                 }
             }
         }
